@@ -1,0 +1,36 @@
+Turma! <@&1113230748204408862> , nossa live criando uma aplicação no Streamlit foi demais né?
+
+Aqui compartilho com vocês todo o material utilizado na live + passo a passo da criação do ambiente virtual + alguns links de dica para vocês criarem a própria aplicação de vocês!
+
+
+✅ 1º passo: Instalar ambientes e criar pasta com arquivos necessários do projeto (requirements.txt + base de dados) 
+
+- Versão do python 3.10
+- Baixar VSCODE.
+
+✅ 2º passo: Criar ambiente virtual
+python -m venv venv
+Set-ExecutionPolicy Unrestricted -scope process
+venv\Scripts\activate
+
+✅ 3º passo: Instalar dependências
+pip install -r requirements.txt
+pip install streamlit
+
+✅  4º passo: Criar seu arquivo .py e começar a criar sua aplicação 📊 
+
+Para rodar a aplicação: 🤘🏾 
+ streamlit run app.py
+
+
+Links úteis:✨ 
+https://docs.streamlit.io/library/api-reference/widgets
+https://www.alura.com.br/artigos/ambientes-virtuais-em-python
+https://www.alura.com.br/artigos/streamlit-compartilhando-sua-aplicacao-de-dados-sem-dor-de-cabeca
+https://blog.streamlit.io/deploy-a-private-app-for-free/
+
+Nossa aplicação: 💙 
+
+https://anaraquelcafe-analise-estudantes-2dtat-app-fbvkng.streamlit.app/
+
+Bora criar a sua própria aplicação? 😍
