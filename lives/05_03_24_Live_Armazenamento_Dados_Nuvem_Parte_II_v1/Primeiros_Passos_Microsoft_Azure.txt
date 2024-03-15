@@ -1,0 +1,30 @@
+Navegação inicial
+------------------
+
+=> Educação
+
+=> Educação => Funções
+
+=> Educação => Funções => Engenheiro de DevOps =>  Introdução à linha de comando do Linux e ao shell
+
+=> Educação => Aprendizado => Conceitos básicos de dados do Microsoft Azure: explorar os principais conceitos de dados
+(*com vídeo)...
+
+=> Educação => Aprendizado => Conceitos básicos de dados do Microsoft Azure: explorar dados relacionais no Azure
+(*com vídeo)...
+
+=> Educação => Aprendizado =>  Conceitos básicos de dados do Microsoft Azure: explorar dados não relacionais no Azure
+(*com vídeo)...
+
+=> Educação => Aprendizado => Conceitos básicos de IA do Microsoft Azure: Explorar o processamento de idioma natural
+(*com vídeo)...
+
+
+Click para a Página inicial do Azure
+------------------------------------------
+=> Navegar inicalmente (menu hamburger,  pagina inicial, painel, favoritos, pesquisar, cloud shell, 
+   assinatura, notificações, configurações, perfil conta azure)
+
+Serviços interessantes após a navegação inicial
+------------------------------------------------
+=> Gerenciamento de custos + cobrança

@@ -1,0 +1,158 @@
+
+
+--
+-- Slide 9: Criar conta Azure for Students no Microsoft Azure
+--
+https://azure.microsoft.com/pt-br/free/students/
+-- ou
+https://azure.microsoft.com/en-us/free/students/
+
+
+--
+-- Slide 26
+--
+gr-kidelicia
+
+arqsecommercekidelicia
+
+
+--
+-- Slide 29
+--
+imagem
+
+--
+-- Slide 31
+--
+som
+
+--
+-- Slide 32
+--
+video
+
+
+--
+-- Slide 34
+--
+fazer upload dos seguintes arquivos
+BigSoya.jpg
+Pagina_Principal.jpg
+QuibeAssadoVegano.jpg
+
+
+--
+-- Slide 43 Copiando a URL SAS do Blob e inserir no arquivo index.html
+--
+https://arqsecommercekidelicia.blob.core.windows.net/imagem/Pagina_Principal.jpg?sp=r&st=2024-03-05T02:50:41Z&se=2024-03-05T10:50:41Z&spr=https&sv=2022-11-02&sr=b&sig=b1goUJclUnWn5Qj0V6%2FWrASmfrKxpNNz3CnUZgt4IDs%3D
+
+
+--
+-- Slide 45 Copiando a URL SAS do Blob e inserir no arquivo index.html
+--
+https://arqsecommercekidelicia.blob.core.windows.net/video/Inovacao_Chicaras.mp4?sp=r&st=2024-03-05T03:01:00Z&se=2024-03-05T11:01:00Z&spr=https&sv=2022-11-02&sr=b&sig=4RZsOsZUG3f%2BoitsSUOUJksiJ3exy6gH56ZWh2aR2rs%3D
+
+
+--
+-- Slide 49
+--
+kidelicia
+
+--
+-- Slide 58
+--
+https://kidelicia.azurewebsites.net/Index.html
+
+
+--
+-- Slide 65
+-- 
+#--
+#-- Cria o grupo de recurso gr-kidelicia
+#--
+az group create --name gr-kidelicia<id_aluno> --location brazilsouth
+
+#--
+#-- Cria o SGBD Azure SQL chamado sqlserver-kidelicia
+#--
+az sql server create -l brazilsouth -g gr-kidelicia<id_aluno> -n sqlserver-kidelicia<id_aluno> -u admsql -p kd@FIAP24 --enable-public-network true
+
+#--
+#-- Cria o banco de dados chamado kideliciadb
+#--
+az sql db create -g gr-kidelicia<id_aluno> -s sqlserver-kidelicia<id_aluno> -n kideliciadb<id_aluno> --service-objective Basic --backup-storage-redundancy Local --zone-redundant false
+
+#--
+#-- Libera o acesso para qualquer endereço IP da rede (*somente para testes iniciais)
+#--
+az sql server firewall-rule create -g gr-kidelicia<id_aluno> -s sqlserver-kidelicia<id_aluno> -n AllowAll --start-ip-address 0.0.0.0 --end-ip-address 255.255.255.255
+
+--
+-- Usuário BD: admsql  
+-- Senha BD: kd@FIAP24
+--
+
+
+--
+-- Slide 67
+--
+Senha BD: kd@FIAP24
+
+
+--
+-- Slide 69
+--
+INSERT INTO dbo.T_KD_ESTADO(ID_ESTADO, SG_ESTADO, NM_ESTADO) 
+VALUES ( 1, 'MG', 'MINAS GERAIS');
+
+SELECT * FROM dbo.T_KD_ESTADO;
+
+--
+-- Slide 72
+--
+https://basedosdados.org/dataset/c747a59f-b695-4d19-82e4-fef703e74c17?table=5894e1ac-dc08-465d-91a3-703683da85ba
+
+
+--
+-- Slide  73
+--
+SELECT  
+x1.ano,
+x1.mes,
+x1.semana,
+x1.sigla_uf,
+CASE 
+          WHEN cast(x1.a003 as int64) = 1 THEN 'Homem'
+          WHEN cast(x1.a003 as int64) = 2 THEN 'Mulher'
+		    ELSE 'Outros'
+		    END AS Sexo_Biologico,
+ 	count(*) as qtd_populacional,
+		SUM( IF(cast(x1.B005 as int64) = 1 , 1, 0)) qtd_populacao_internada,
+		SUM( IF(cast(x1.B006 as int64) = 1 , 1, 0)) qtd_populacao_sedada_respiracaoartificial,
+    SUM( IF(cast(x1.B008 as int64) = 1 , 1, 0)) qtd_populacao_fez_teste_covid,
+    SUM( IF(cast(x1.B009B as int64) = 1 , 1, 0)) qtd_populacao_pegou_covid
+FROM `basedosdados.br_ibge_pnad_covid.microdados` x1
+GROUP BY
+x1.ano,
+x1.mes,
+x1.semana,
+x1.sigla_uf,
+CASE 
+   WHEN cast(x1.a003 as int64) = 1 THEN 'Homem'
+   WHEN cast(x1.a003 as int64) = 2 THEN 'Mulher'
+   ELSE 'Outros'
+END
+			
+
+--
+-- Slide 77
+--			
+sqlserver-kideliciapf0110.database.windows.net
+Usuário BD: admsql  
+Senha BD: kd@FIAP24
+			
+--
+-- Slide 86
+--
+select  * from dbo.SaidaDadosBigQueryPNAD;
+
