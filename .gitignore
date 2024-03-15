@@ -1,2 +1,5 @@
 # Ignore venv
 /venv_pos_tech
+credentials_gcp*
+questoes_selecionadas.txt
+dados/*.zip
