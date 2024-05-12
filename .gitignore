@@ -3,3 +3,7 @@
 credentials_gcp*
 questoes_selecionadas.txt
 fase_3/tech_challenge/dados/*.zip
+__pycache__
+build_query.ods
+fase_3/tech_challenge/teste.ipynb
+fase_3/tech_challenge/file_test.csv
