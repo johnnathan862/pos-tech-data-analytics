@@ -36,6 +36,7 @@ CREATE OR REPLACE VIEW `pos-tech-project.pnad.view_analytic_nov_out` AS (
     B0046,
     B005,
     B006,
+    B008,
     B009B,
     B009D,
     B009F,
@@ -86,6 +87,7 @@ CREATE OR REPLACE VIEW `pos-tech-project.pnad.view_analytic_nov_out` AS (
       B0046,
       B005,
       B006,
+      B008,
       B009B,
       B009D,
       B009F,
@@ -165,17 +167,18 @@ CREATE OR REPLACE TABLE `pos-tech-project.pnad.analytic_nov_out` AS (
     d30.valor AS B0046_desc,
     d31.valor AS B005_desc,
     d32.valor AS B006_desc,
-    d33.valor AS B009B_desc,
-    d34.valor AS B009D_desc,
-    d35.valor AS B009F_desc,
-    d36.valor AS B011_desc,
-    d37.valor AS C007_desc,
-    d38.valor AS C007C_desc,
-    d39.valor AS C007D_desc,
-    d40.valor AS C010_desc,
-    d41.valor AS C013_desc,
-    d42.valor AS E001_desc,
-    d43.valor AS F001_desc
+    d33.valor AS B008_desc,
+    d34.valor AS B009B_desc,
+    d35.valor AS B009D_desc,
+    d36.valor AS B009F_desc,
+    d37.valor AS B011_desc,
+    d38.valor AS C007_desc,
+    d39.valor AS C007C_desc,
+    d40.valor AS C007D_desc,
+    d41.valor AS C010_desc,
+    d42.valor AS C013_desc,
+    d43.valor AS E001_desc,
+    d44.valor AS F001_desc,
   FROM `pos-tech-project.pnad.view_analytic_nov_out` AS an
   LEFT JOIN `basedosdados.br_ibge_pnad_covid.dicionario` AS d2 ON an.CAPITAL = CAST(d2.chave AS INT64) AND d2.nome_coluna = 'capital'
   LEFT JOIN `basedosdados.br_ibge_pnad_covid.dicionario` AS d3 ON an.A003 = CAST(d3.chave AS INT64) AND d3.nome_coluna = 'a003'
@@ -208,15 +211,16 @@ CREATE OR REPLACE TABLE `pos-tech-project.pnad.analytic_nov_out` AS (
   LEFT JOIN `basedosdados.br_ibge_pnad_covid.dicionario` AS d30 ON an.B0046 = CAST(d30.chave AS INT64) AND d30.nome_coluna = 'b0046'
   LEFT JOIN `basedosdados.br_ibge_pnad_covid.dicionario` AS d31 ON an.B005 = CAST(d31.chave AS INT64) AND d31.nome_coluna = 'b005'
   LEFT JOIN `basedosdados.br_ibge_pnad_covid.dicionario` AS d32 ON an.B006 = CAST(d32.chave AS INT64) AND d32.nome_coluna = 'b006'
-  LEFT JOIN `basedosdados.br_ibge_pnad_covid.dicionario` AS d33 ON an.B009B = CAST(d33.chave AS INT64) AND d33.nome_coluna = 'b009b'
-  LEFT JOIN `basedosdados.br_ibge_pnad_covid.dicionario` AS d34 ON an.B009D = CAST(d34.chave AS INT64) AND d34.nome_coluna = 'b009d'
-  LEFT JOIN `basedosdados.br_ibge_pnad_covid.dicionario` AS d35 ON an.B009F = CAST(d35.chave AS INT64) AND d35.nome_coluna = 'b009f'
-  LEFT JOIN `basedosdados.br_ibge_pnad_covid.dicionario` AS d36 ON an.B011 = CAST(d36.chave AS INT64) AND d36.nome_coluna = 'b011'
-  LEFT JOIN `basedosdados.br_ibge_pnad_covid.dicionario` AS d37 ON an.C007 = CAST(d37.chave AS INT64) AND d37.nome_coluna = 'c007'
-  LEFT JOIN `basedosdados.br_ibge_pnad_covid.dicionario` AS d38 ON an.C007C = CAST(d38.chave AS INT64) AND d38.nome_coluna = 'c007c'
-  LEFT JOIN `basedosdados.br_ibge_pnad_covid.dicionario` AS d39 ON an.C007D = CAST(d39.chave AS INT64) AND d39.nome_coluna = 'c007d'
-  LEFT JOIN `basedosdados.br_ibge_pnad_covid.dicionario` AS d40 ON an.C010 = CAST(d40.chave AS INT64) AND d40.nome_coluna = 'c010'
-  LEFT JOIN `basedosdados.br_ibge_pnad_covid.dicionario` AS d41 ON an.C013 = CAST(d41.chave AS INT64) AND d41.nome_coluna = 'c013'
-  LEFT JOIN `basedosdados.br_ibge_pnad_covid.dicionario` AS d42 ON an.E001 = CAST(d42.chave AS INT64) AND d42.nome_coluna = 'e001'
-  LEFT JOIN `basedosdados.br_ibge_pnad_covid.dicionario` AS d43 ON an.F001 = CAST(d43.chave AS INT64) AND d43.nome_coluna = 'f001'
+  LEFT JOIN `basedosdados.br_ibge_pnad_covid.dicionario` AS d33 ON an.B008 = CAST(d33.chave AS INT64) AND d33.nome_coluna = 'b008'
+  LEFT JOIN `basedosdados.br_ibge_pnad_covid.dicionario` AS d34 ON an.B009B = CAST(d34.chave AS INT64) AND d34.nome_coluna = 'b009b'
+  LEFT JOIN `basedosdados.br_ibge_pnad_covid.dicionario` AS d35 ON an.B009D = CAST(d35.chave AS INT64) AND d35.nome_coluna = 'b009d'
+  LEFT JOIN `basedosdados.br_ibge_pnad_covid.dicionario` AS d36 ON an.B009F = CAST(d36.chave AS INT64) AND d36.nome_coluna = 'b009f'
+  LEFT JOIN `basedosdados.br_ibge_pnad_covid.dicionario` AS d37 ON an.B011 = CAST(d37.chave AS INT64) AND d37.nome_coluna = 'b011'
+  LEFT JOIN `basedosdados.br_ibge_pnad_covid.dicionario` AS d38 ON an.C007 = CAST(d38.chave AS INT64) AND d38.nome_coluna = 'c007'
+  LEFT JOIN `basedosdados.br_ibge_pnad_covid.dicionario` AS d39 ON an.C007C = CAST(d39.chave AS INT64) AND d39.nome_coluna = 'c007c'
+  LEFT JOIN `basedosdados.br_ibge_pnad_covid.dicionario` AS d40 ON an.C007D = CAST(d40.chave AS INT64) AND d40.nome_coluna = 'c007d'
+  LEFT JOIN `basedosdados.br_ibge_pnad_covid.dicionario` AS d41 ON an.C010 = CAST(d41.chave AS INT64) AND d41.nome_coluna = 'c010'
+  LEFT JOIN `basedosdados.br_ibge_pnad_covid.dicionario` AS d42 ON an.C013 = CAST(d42.chave AS INT64) AND d42.nome_coluna = 'c013'
+  LEFT JOIN `basedosdados.br_ibge_pnad_covid.dicionario` AS d43 ON an.E001 = CAST(d43.chave AS INT64) AND d43.nome_coluna = 'e001'
+  LEFT JOIN `basedosdados.br_ibge_pnad_covid.dicionario` AS d44 ON an.F001 = CAST(d44.chave AS INT64) AND d44.nome_coluna = 'f001'
 )
