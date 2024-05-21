@@ -17,7 +17,7 @@ input_qtd_dias_pred = int(st.slider(label='dias', min_value=1, max_value=365))
 
 if st.button("Fazer previsão"):
     # Carregando o modelo
-    with open(os.getcwd()+'/models/model_prophet_v1.json', 'r') as fin:
+    with open(os.getcwd()+'/fase_4/tech_challenge/models/model_prophet_v1.json', 'r') as fin:
         model = model_from_json(fin.read())  # Load model
 
 
