@@ -2,7 +2,9 @@ import streamlit as st
 from prophet.serialize import model_from_json
 from prophet.plot import plot_plotly
 import plotly.graph_objects as go
+import os
 
+os.getcwd()
 
 # Para rodar a aplicação é necessário rodar o comando "streamlit run app.py" no terminal dentro do venv
 
@@ -15,7 +17,7 @@ input_qtd_dias_pred = int(st.slider(label='dias', min_value=1, max_value=365))
 
 if st.button("Fazer previsão"):
     # Carregando o modelo
-    with open('models/model_prophet_v1.json', 'r') as fin:
+    with open(os.getcwd()+'/models/model_prophet_v1.json', 'r') as fin:
         model = model_from_json(fin.read())  # Load model
 
 
