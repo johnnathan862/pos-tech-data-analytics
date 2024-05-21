@@ -2,8 +2,8 @@ import pandas as pd
 
 # Coletando o dado
 df = pd.read_html(
-    "http://www.ipeadata.gov.br/ExibeSerie.aspx?module=m&serid=1650971490&oper=view", 
-    decimal=','
+    "http://www.ipeadata.gov.br/ExibeSerie.aspx?module=m&serid=1650971490&oper=view"
+    # decimal=','
 )
 
 # Limpando o dataframe
